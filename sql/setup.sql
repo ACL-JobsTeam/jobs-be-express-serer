@@ -5,5 +5,6 @@ CREATE TABLE all_jobs (
     title TEXT,
     company TEXT,
     url TEXT,
-    post_date DATE
+    post_date DATE,
+    location TEXT 
 )
