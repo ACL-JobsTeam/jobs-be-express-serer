@@ -1,4 +1,6 @@
 DROP TABLE IF EXISTS all_jobs;
+DROP TABLE IF EXISTS note;
+DROP TABLE IF EXISTS events;
 
 CREATE TABLE all_jobs (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -7,4 +9,25 @@ CREATE TABLE all_jobs (
     url TEXT,
     post_date DATE,
     location TEXT 
+)
+
+CREATE TABLE note (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    user_note TEXT
+)
+
+CREATE TABLE events (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    event_name TEXT,
+    event_date DATE
+)
+
+CREATE TABLE questions (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    user_question TEXT
+)
+
+CREATE TABLE contacts (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    company_contact TEXT
 )
