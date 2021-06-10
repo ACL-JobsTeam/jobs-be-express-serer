@@ -8,7 +8,7 @@ CREATE TABLE all_jobs (
     url TEXT,
     post_date DATE,
     location TEXT 
-)
+);
 
 CREATE TABLE users (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
