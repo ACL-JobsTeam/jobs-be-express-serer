@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS all_jobs;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE all_jobs (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -7,4 +8,11 @@ CREATE TABLE all_jobs (
     url TEXT,
     post_date DATE,
     location TEXT 
-)
+);
+
+CREATE TABLE users (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  username TEXT UNIQUE NOT NULL,
+  email TEXT UNIQUE NOT NULL,
+  password TEXT NOT NULL
+);
