@@ -88,6 +88,7 @@ CREATE TABLE job_apps (
   app_id BIGINT PRIMARY KEY NOT NULL DEFAULT nextval('job_apps_app_id_seq'),
   position TEXT,
   company TEXT,
+  job_url TEXT,
   linked_user_id INT,
   CONSTRAINT fk_user
   	FOREIGN KEY(linked_user_id) 
@@ -110,16 +111,16 @@ CREATE TABLE job_apps (
 --       ('offer', '2', '{704}', '100'),
 --       ('rejected', '3', '{707, 706}', '100');
 
--- INSERT INTO job_apps (position, company, linked_user_id)
+-- INSERT INTO job_apps (position, company, job_url, linked_user_id)
 --   VALUES
---       ('SWE A', 'Amazon', '100'),
---       ('SWE B', 'Google', '100'),
---       ('SWE C', 'Reddit', '100'),
---       ('SWE D', 'Twitter', '100'),
---       ('SWE E', 'FB', '100'),
---       ('SWE F', 'Insta', '100'),
---       ('SWE G', 'Twilio', '100'),
---       ('SWE H', 'Yahoo', '100'),
---       ('SWE I', 'Stripe', '100');
+--       ('SWE A', 'Amazon', 'http://a', '100'),
+--       ('SWE B', 'Google', 'http://b', '100'),
+--       ('SWE C', 'Reddit', 'http://c', '100'),
+--       ('SWE D', 'Twitter', 'http://d', '100'),
+--       ('SWE E', 'FB', 'http://e', '100'),
+--       ('SWE F', 'Insta', 'http://f', '100'),
+--       ('SWE G', 'Twilio', 'http://g', '100'),
+--       ('SWE H', 'Yahoo', 'http://h', '100'),
+--       ('SWE I', 'Stripe', 'http://i', '100');
 
 -- UPDATE columns SET job_pos='{708}' WHERE column_id=504;
