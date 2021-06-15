@@ -101,7 +101,7 @@ CREATE TABLE job_apps (
 
 -- INSERT INTO users (username, email, password) 
 -- 	VALUES 
---     	('user1', 'one@one.com', '$2b$12$E/.Xntp5e082S0uxhTx6N.ldDqdPkgNDVO4eRKOvEAnoPKCWPncYu');
+--     	('user1', 'one@one.com', '$2b$12$e1DAosRELAvu1ZdptKCr1OEZQeBshb1W/WIPkBcsEeYHczMcFinHK');
 
 -- INSERT INTO columns (name, col_position, job_pos, linked_user_id) 
 -- 	VALUES 
