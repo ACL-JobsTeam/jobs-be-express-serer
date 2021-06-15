@@ -97,19 +97,18 @@ CREATE TABLE job_apps (
 );
 
 -- INSERTING TEST DATA BELOW
+-- user1 - abc123
 
 -- INSERT INTO users (username, email, password) 
 -- 	VALUES 
---     	('user1', 'one@one.com', 'abc123'),
---     	('user2', 'two@two.com', 'abc123'), 
---     	('user3', 'three@three.com', 'abc123');
+--     	('user1', 'one@one.com', '$2b$12$E/.Xntp5e082S0uxhTx6N.ldDqdPkgNDVO4eRKOvEAnoPKCWPncYu');
 
 -- INSERT INTO columns (name, col_position, job_pos, linked_user_id) 
 -- 	VALUES 
---     	('todo', '1', '{700, 702}', '100'),
---       ('progress', '0', '{701, 703, 705}', '100'),
---       ('offer', '2', '{704}', '100'),
---       ('rejected', '3', '{707, 706}', '100');
+--       ('progress', '0', '{700, 701, 702}', '100'),
+--     	('todo', '1', '{703, 704}', '100'),
+--       ('offer', '2', '{705}', '100');
+
 
 -- INSERT INTO job_apps (position, company, job_url, linked_user_id)
 --   VALUES
@@ -118,9 +117,6 @@ CREATE TABLE job_apps (
 --       ('SWE C', 'Reddit', 'http://c', '100'),
 --       ('SWE D', 'Twitter', 'http://d', '100'),
 --       ('SWE E', 'FB', 'http://e', '100'),
---       ('SWE F', 'Insta', 'http://f', '100'),
---       ('SWE G', 'Twilio', 'http://g', '100'),
---       ('SWE H', 'Yahoo', 'http://h', '100'),
---       ('SWE I', 'Stripe', 'http://i', '100');
+--       ('SWE F', 'Insta', 'http://f', '100');
 
 -- UPDATE columns SET job_pos='{708}' WHERE column_id=504;
