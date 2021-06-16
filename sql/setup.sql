@@ -20,26 +20,7 @@ CREATE TABLE all_jobs (
     location TEXT 
 );
 
-CREATE TABLE notes (
-    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    user_note TEXT
-);
 
-CREATE TABLE events (
-    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    event_name TEXT,
-    event_date DATE
-);
-
-CREATE TABLE questions (
-    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    user_question TEXT
-);
-
-CREATE TABLE contacts (
-    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    company_contact TEXT
-);
 
 
 CREATE SEQUENCE users_user_id_seq
@@ -84,6 +65,7 @@ CREATE SEQUENCE job_apps_app_id_seq
   START 700
   CACHE 1;
 
+
 CREATE TABLE job_apps (
   app_id BIGINT PRIMARY KEY NOT NULL DEFAULT nextval('job_apps_app_id_seq'),
   position TEXT,
@@ -96,6 +78,46 @@ CREATE TABLE job_apps (
   		ON DELETE SET NULL
 );
 
+CREATE TABLE notes (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    user_note TEXT,
+    linked_app BIGINT,
+    CONSTRAINT fk_app
+      FOREIGN KEY(linked_app)
+        REFERENCES job_apps(app_id)
+        ON DELETE SET NULL
+);
+
+CREATE TABLE events (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    event_name TEXT,
+    event_date DATE,
+    linked_app BIGINT,
+    CONSTRAINT fk_app
+      FOREIGN KEY(linked_app)
+        REFERENCES job_apps(app_id)
+        ON DELETE SET NULL
+);
+
+CREATE TABLE questions (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    user_question TEXT,
+    linked_app BIGINT,
+    CONSTRAINT fk_app
+      FOREIGN KEY(linked_app)
+        REFERENCES job_apps(app_id)
+        ON DELETE SET NULL
+);
+
+CREATE TABLE contacts (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    company_contact TEXT,
+    linked_app BIGINT,
+    CONSTRAINT fk_app
+      FOREIGN KEY(linked_app)
+        REFERENCES job_apps(app_id)
+        ON DELETE SET NULL
+);
 -- INSERTING TEST DATA BELOW
 -- user1 - abc123
 
@@ -112,7 +134,7 @@ CREATE TABLE job_apps (
 
 -- INSERT INTO job_apps (position, company, job_url, linked_user_id)
 --   VALUES
---       ('SWE A', 'Amazon', 'http://a', '100'),
+--       ('SWE A', 'Amazon', 'http://a', '100');
 --       ('SWE B', 'Google', 'http://b', '100'),
 --       ('SWE C', 'Reddit', 'http://c', '100'),
 --       ('SWE D', 'Twitter', 'http://d', '100'),
