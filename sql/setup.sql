@@ -99,9 +99,9 @@ CREATE TABLE job_apps (
 -- INSERTING TEST DATA BELOW
 -- user1 - abc123
 
--- INSERT INTO users (username, email, password) 
--- 	VALUES 
---     	('user1', 'one@one.com', '$2b$12$e1DAosRELAvu1ZdptKCr1OEZQeBshb1W/WIPkBcsEeYHczMcFinHK');
+INSERT INTO users (username, email, password) 
+	VALUES 
+    	('user1', 'one@one.com', '$2b$12$e1DAosRELAvu1ZdptKCr1OEZQeBshb1W/WIPkBcsEeYHczMcFinHK');
 
 -- INSERT INTO columns (name, col_position, job_pos, linked_user_id) 
 -- 	VALUES 
