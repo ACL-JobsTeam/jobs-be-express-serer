@@ -11,14 +11,14 @@ DROP SEQUENCE IF EXISTS columns_column_id_seq CASCADE;
 DROP SEQUENCE IF EXISTS job_apps_app_id_seq CASCADE;
 
 
--- CREATE TABLE all_jobs (
---     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
---     title TEXT,
---     company TEXT,
---     url TEXT,
---     post_date DATE,
---     location TEXT 
--- );
+CREATE TABLE all_jobs (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  title TEXT,
+  company TEXT,
+  url TEXT,
+  post_date DATE,
+  location TEXT 
+  );
 
 
 
